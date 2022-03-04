@@ -11,12 +11,14 @@ for (let i = 0; i < nigeria.length; i++) {
 
 
 
-
-
-
 selectElement.addEventListener("click", function (e) {
   const indexOfState = e.target.value
   const lgaElement = document.getElementById("lga")
+  const numberOfLGAElement = document.getElementById('number_of_lga')
+  numberOfLGAElement.textContent = nigeria[indexOfState].state.locals.length
+
+  const nameOfStateElement = document.getElementById('name_of_state')
+  nameOfStateElement.textContent = nigeria[indexOfState].state.name
   injectOption (nigeria[indexOfState].state.locals, lgaElement)
 });
 
